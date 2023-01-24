@@ -91,12 +91,12 @@ let average3 = sum3 / count2;
 console.log("The average of the numbers is " + average3 + '.');
 
 /* Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave. */
-/* let smallest = 0; */
+
 let number4 = 0;
 let howMany2 = Number(prompt("How many numbers do you want to enter?"))
 let smallest = Number(prompt("Enter a number"));
 
-for(i = 0; i < howMany2; i++) {
+for(i = 1; i < howMany2; i++) {
     number4 = Number(prompt("Enter a number"));
         if (number4 < smallest) {
     smallest = number4; }
@@ -105,6 +105,36 @@ for(i = 0; i < howMany2; i++) {
 console.log('The smallest number you gave is ' + smallest + '.');
 
 /* Make a program that asks ten numbers and in the end prints out two biggest numbers. */
+let number5 = 0;
+let biggest = Number(prompt('Please enter a number'));
+let secondBiggest = Number(prompt('Please enter a number'));
 
-
+for (let i = 1; i < 10; i++) {
+    number5 = Number(prompt('Please enter a number'));
+    if (number5 > biggest) {
+        biggest = number5;
+        A
+    }
+    
+}
+console.log(('The two largest numbers are ') + biggest + 'and' + secondBiggest + '.');
 /* Make a program that asks ten numbers. Program calculates and prints out sum and average, also prints out the smallest and biggest number. */
+
+let number6 = 0;
+let sum4 = 0;
+let biggest2 = Number(prompt('Please enter a number'));
+let smallest2 = Number(prompt('Please enter a number'));
+
+for (i = 0;i < 10; i++) {
+    number6 = Number(prompt('Please enter a number'));
+    if (number6 < smallest2) {
+        smallest2 = number6;
+    }
+    if (number6 > biggest2) {
+        biggest2 = number6;
+    }
+    sum4 += number6
+}
+let average4 = sum4/10;
+
+console.log('The sum is ' + sum4 + ', the average is ' + average4 + ', the smallest number is ' + smallest2 + ' and the largest number is ' + biggest2 + '.');
