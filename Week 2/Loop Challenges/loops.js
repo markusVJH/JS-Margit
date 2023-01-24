@@ -38,7 +38,7 @@ do {
 
 let howMany = 0;
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 0; i < 5; i++) {
     let number = Number(prompt("Write a number:"));
     if (number % 2 === 0) {
         howMany++;
@@ -80,29 +80,30 @@ let count2 = 0;
 while(true) {
     let number3 = Number(prompt("Enter a number!"));
     let question = confirm("Do you want to enter another number? :)))");
-    if (question === false) {
-        break; 
-    }
+    
     sum3 += Number(number3);
     count2++;
-    
+    if (question === false) {
+        break; 
+    }        
 }
 let average3 = sum3 / count2;
 console.log("The average of the numbers is " + average3 + '.');
 
 /* Make a program that asks first how many numbers user wants to give to the program. After that program asks those numbers. In the end program prints out the smallest number that user gave. */
-let smallest = 0;
+/* let smallest = 0; */
 let number4 = 0;
 let howMany2 = Number(prompt("How many numbers do you want to enter?"))
+let smallest = Number(prompt("Enter a number"));
 
 for(i = 0; i < howMany2; i++) {
     number4 = Number(prompt("Enter a number"));
+        if (number4 < smallest) {
+    smallest = number4; }
 }
 
-console.log('The smallest number you gave is' + smallest + '.')
+console.log('The smallest number you gave is ' + smallest + '.');
 
-console.log('something');
-console.log('something');
 /* Make a program that asks ten numbers and in the end prints out two biggest numbers. */
 
 
