@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculators</title>
+</head>
+<body>
+    
+    <h1>Calculators</h1>
+    <h2>Gasoline price</h2>
+    <p>
+        Make a program that asks the price of the gasoline and the amount of money from the user. The program calculates how much gasoline the user gets with the money. The result is displayed on to screen.
+        <ul><li>
+            If there are more than 10 litres, then the moessage on the screen: "good, you can escape now"
+        </li>
+        <li>
+            If less, it shows the message: "ups you have to stay here."
+        </li>
+        </ul>
+    </p>
+
+    <form>
+        <div class="form_group">
+        <label for="price">Price</label>
+        <input type="number" id="price"/>
+    </div>
+    <div class="form_group">
+        <label for="money">Money</label>
+        <input type="number" id="money"/>
+    </div>
+
+    
+    </form>
+    <button onclick="calcGasoline()">Calculate</button>
+    <p id="answer"></p>
+    
+    <!--     Make a web program that transforms temperature from one unit to other units. (For example c to f and kelvin).
+    
+        Answer should be visinle in other inputs as a value. -->
+    <h2>Temperature Converter</h2>
+
+    <form>
+        <div class="form_group">
+        <label for="celsius">Celsius</label>
+        <input type="number" id="celsius" onchange="tempConv(this.id)" oninput="tempConv(this.id)">
+        </div>
+        <div class="form_group">
+        <label for="fahrenheit">Fahrenheit</label>
+        <input type="number" id="fahrenheit" onchange="tempConv(this.id)" oninput="tempConv(this.id)">
+        </div>
+        <div class="form_group">
+        <label for="kelvin">Kelvin</label>
+            <input type="number" id="kelvin" onchange="tempConv(this.id)" oninput="tempConv(this.id)">
+        </div>
+    </form>
+
+    <script src="main.js"></script> <!-- last thing in body -->
+</body>
+</html>
