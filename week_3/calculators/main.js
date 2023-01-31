@@ -29,7 +29,7 @@ const calcGasoline = () => {
             celInput.value = (fahInput.value - 32) * 5/9;
             kelInput.value = (fahInput.value - 32) * 5/9 +273.15;
         } else if (id === "kelvin") {
-            celInput.value = kelInput.value - 273.15;
+            celInput.value = (kelInput.value - 273.15).toFixed(2);
             fahInput.value = (kelInput.value -273.15) * 9/5 + 32;
         }
         
