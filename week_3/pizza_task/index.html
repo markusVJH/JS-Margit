@@ -8,12 +8,15 @@
     <title>Document</title>
   </head>
   <body>
+    <section id="section1"></section>
+    <section id="section2">
     <form>
+      <h1>Make your order here :))))</h1>
       <h2>Your name</h2>
       <label for="text"></label>
-      <input type="text" placeholder="Enter your name" />
-      <h2>Size of pizza</h2>
-      <div>
+      <input type="text" placeholder="Enter your name here!" />
+      <h2>Size of your pizza</h2>
+      <div class="choosing">
         <div>
           <label for="size2">For 2, 7,50€</label>
           <input type="radio" name="size" id="size2" />
@@ -31,7 +34,7 @@
           <input type="radio" name="size" id="size8" />
         </div>
       </div>
-      <div>
+      <div class="choosing">
         <h2>Toppings</h2>
         <div>
           <label for="pepperoni">Pepperoni</label>
@@ -84,10 +87,13 @@
         </div>
       </div>
     </form>
-    <h2>Summary</h2>
+  </section>
+  <section id="section3">
+    <h2>Summary of your order:</h2>
     <p id="totalPrice"></p>
     <p id="selectedSize"></p>
     <p id="totalToppings"></p>
     <script src="main.js"></script>
+   </section> 
   </body>
 </html>
