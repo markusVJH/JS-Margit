@@ -1,7 +1,6 @@
 
 form = document.querySelector('form');
 
-/* let total = 0; */
 let size = '';
 let sizeResult = 0;
 let toppingsResult = 0;
@@ -11,8 +10,12 @@ const totalPrice = document.querySelector('#totalPrice');
 const selectedSize = document.querySelector('#selectedSize');
 const totalToppings = document.querySelector('#totalToppings');
 const selectedDel = document.querySelector('#selectedDel');
+const displayName = document.querySelector('#displayName');
 
 function summary(id) {
+    
+let namePrint = document.querySelector('#name').value;
+displayName.textContent = (`${namePrint}`);
 
    if (id === "size2") {
     sizeResult = 7.5;
@@ -44,13 +47,23 @@ for (let i = 0; i < toppingCB.length; i++) {
 
 homeSelect = 0;
 const deliverySelect = document.querySelector('select[name=delivery]')
-if (deliverySelect.value === "home")
-    homeSelect += 5;
+if (deliverySelect.value === "home") {
+homeSelect += 5;
+deliveryPrint = 'Delivery home';
+}
+else if (deliverySelect.value === 'in') {
+deliveryPrint = 'Eat in';
+}
+else if (deliverySelect.value === 'pickup') {
+    deliveryPrint = 'Takeout';
+}
 
+    
 totalPrice.textContent = (`Total price is ${sizeResult + toppingsResult + homeSelect}€`);
 selectedSize.textContent = (`Pizza size ${size}`);
 totalToppings.textContent = (`Toppings: ${toppingList}`);
-selectedDel.textContent = 
+selectedDel.textContent = (`${deliveryPrint}`);
+
 
 }
 
