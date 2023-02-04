@@ -1,13 +1,16 @@
 
 form = document.querySelector('form');
-/* const sizeInput = document.querySelector('input[input=radio]'); */
-let total = 0;
+
+/* let total = 0; */
 let size = '';
-let sizeResult;
-let toppingsResult;
-let deliveryResult;
+let sizeResult = 0;
+let toppingsResult = 0;
+let deliveryResult = '';
+let homeSelect = 0;
 const totalPrice = document.querySelector('#totalPrice');
 const selectedSize = document.querySelector('#selectedSize');
+const totalToppings = document.querySelector('#totalToppings');
+const selectedDel = document.querySelector('#selectedDel');
 
 function summary(id) {
 
@@ -25,36 +28,32 @@ function summary(id) {
    size = '8';
 }
 
-const toppingCB = document.querySelectorAll('input[name=topping]:checked'); //boolean if checked or not
-const toppingsAmount = toppingCB.length;
-if (toppingsAmount > 4) {
-    /* total = total + 0.5; */
-    toppingsResult += 0.5;
+
+toppingsResult = 0;
+const toppingCB = document.querySelectorAll('input[name=topping]:checked');
+if (toppingCB.length > 4) {
+toppingsResult = (toppingCB.length -4) * 0.5
+};
+
+
+let toppingList = [];
+for (let i = 0; i < toppingCB.length; i++) {
+    toppingList.push(' ' + toppingCB[i].id);
+    console.log(toppingList);
 }
 
-totalPrice.textContent = (`Total price is (${sizeResult} + ${toppingsResult})`); //fix this :(
+homeSelect = 0;
+const deliverySelect = document.querySelector('select[name=delivery]')
+if (deliverySelect.value === "home")
+    homeSelect += 5;
+
+totalPrice.textContent = (`Total price is ${sizeResult + toppingsResult + homeSelect}€`);
 selectedSize.textContent = (`Pizza size ${size}`);
+totalToppings.textContent = (`Toppings: ${toppingList}`);
+selectedDel.textContent = 
+
 }
 
 form.addEventListener('input', function(event) {
     summary(event.target.id);
   });
-
-//event listener on change whole form
-
-/* switch (id) {
-    case "size2":
-    total =  total + 7.5;
-    break;
-    case "size4":
-    total = total + 10.5;
-    break;
-    case "size6":
-    total = total + 12.5;
-    break;
-    case "size8":
-    total = total + 15.5
-    break;
-    default: 
-    console.log('default');
-} */

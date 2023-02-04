@@ -14,8 +14,8 @@
       <h1>Make your order here :))))</h1>
       <h2>Your name</h2>
       <label for="text"></label>
-      <input type="text" placeholder="Enter your name here!" />
-      <h2>Size of your pizza</h2>
+      <input type="text" placeholder="Write your name here!" />
+      <h2>Size of the pizza</h2>
       <div class="choosing">
         <div>
           <label for="size2">For 2, 7,50€</label>
@@ -45,7 +45,7 @@
           <input type="checkbox" name="topping" id="mushroom" />
         </div>
         <div>
-          <label for="cheese">Extra cheeese</label>
+          <label for="cheese">Extra cheese</label>
           <input type="checkbox" name="topping" id="cheese" />
         </div>
         <div>
@@ -76,13 +76,14 @@
           <label for="kebab">Kebab</label>
           <input type="checkbox" name="topping" id="kebab" />
         </div>
-        <h2>Delivery</h2>
+        <h2>Delivery, takeout or eat in?</h2>
         <div>
-          <label for="delivery">Choose a delivery</label>
+          <label for="delivery"></label>
           <select name="delivery" id="delivery">
-            <option value="home">Delivery home, 5€</option>
+            <option value="default">Choose here!</option>
             <option value="in">Eat in</option>
             <option value="pickup">Pickup food</option>
+            <option value="home">Delivery home = 5€</option>
           </select>
         </div>
       </div>
@@ -90,9 +91,11 @@
   </section>
   <section id="section3">
     <h2>Summary of your order:</h2>
-    <p id="totalPrice"></p>
+    <p id="displayName"></p>
     <p id="selectedSize"></p>
     <p id="totalToppings"></p>
+    <p id="totalPrice"></p>
+    <p id="selectedDel"></p>
     <script src="main.js"></script>
    </section> 
   </body>
