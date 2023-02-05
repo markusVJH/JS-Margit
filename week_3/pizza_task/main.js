@@ -16,7 +16,7 @@ function summary(id) {
     
 let namePrint = document.querySelector('#name').value;
 displayName.textContent = (`Customer name: ${namePrint}`);
-
+console.log(namePrint);
    if (id === "size2") {
     sizeResult = 7.5;
     size = "2";

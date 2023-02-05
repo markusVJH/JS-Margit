@@ -62,9 +62,16 @@ input[type="checkbox"] {
   margin-right: 10px;
   font-family: inherit;
 }
-input [type="text"],
-option {
+#name,
+option,
+#delivery {
   font-family: inherit;
+  display: flex;
+  height: 2rem;
+  border-radius: 3px;
+  width: 10rem;
+  border: groove;
+  border-color: #46a200;
 }
 #selectedDel {
   padding-bottom: 1rem;
