@@ -15,7 +15,7 @@ const displayName = document.querySelector('#displayName');
 function summary(id) {
     
 let namePrint = document.querySelector('#name').value;
-displayName.textContent = (`${namePrint}`);
+displayName.textContent = (`Customer name: ${namePrint}`);
 
    if (id === "size2") {
     sizeResult = 7.5;
@@ -60,9 +60,9 @@ else if (deliverySelect.value === 'pickup') {
 
     
 totalPrice.textContent = (`Total price is ${sizeResult + toppingsResult + homeSelect}€`);
-selectedSize.textContent = (`Pizza size ${size}`);
+selectedSize.textContent = (`Pizza size: ${size}`);
 totalToppings.textContent = (`Toppings: ${toppingList}`);
-selectedDel.textContent = (`${deliveryPrint}`);
+selectedDel.textContent = (`Delivery: ${deliveryPrint}`);
 
 
 }

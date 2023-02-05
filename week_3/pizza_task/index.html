@@ -12,7 +12,7 @@
     <section id="section2">
     <form>
       <h1>Make your order here :))))</h1>
-      <h2>Your name</h2>
+      <h2 id="nametitle">Your name</h2>
       <label for="text"></label>
       <input type="text" placeholder="Write your name here!" id="name" />
       <h2>Size of the pizza</h2>
@@ -36,6 +36,7 @@
       </div>
       <div class="choosing">
         <h2>Toppings</h2>
+        <h4>4 toppings for free, 0.5€ per extra</h3>
         <div>
           <label for="pepperoni">Pepperoni</label>
           <input type="checkbox" name="topping" id="pepperoni" />
@@ -91,11 +92,21 @@
   </section>
   <section id="section3">
     <h2>Summary of your order:</h2>
+    <div>
     <p id="displayName"></p>
+     </div>
+     <div>
     <p id="selectedSize"></p>
+</div>
+<div>
     <p id="totalToppings"></p>
+</div>
+<div>
     <p id="selectedDel"></p>
+</div>
+<div>
     <p id="totalPrice"></p>
+</div>
     <script src="main.js"></script>
    </section> 
   </body>
