@@ -81,7 +81,7 @@
         <div>
           <label for="delivery"></label>
           <select name="delivery" id="delivery">
-            <option value="default">Choose here!</option>
+            <option selected disabled value="default">Choose here!</option> <!-- first option selected and disabled! -->
             <option value="in">Eat in</option>
             <option value="pickup">Takeout</option>
             <option value="home">Delivery home = 5€</option>
@@ -93,7 +93,7 @@
   <section id="section3">
     <h2>Summary of your order:</h2>
     <div>
-    <p id="displayName"></p>
+    <p id="displayName"></p> <!-- <p>Name: <span id="displayName"></span></p> --> <!-- This would be to have 'Name:' always showing -->
      </div>
      <div>
     <p id="selectedSize"></p>

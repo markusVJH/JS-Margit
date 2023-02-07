@@ -17,7 +17,7 @@ function summary(id) {
 let namePrint = document.querySelector('#name').value;
 displayName.textContent = (`Customer name: ${namePrint}`);
 console.log(namePrint);
-   if (id === "size2") {
+   if (id === "size2") {           
     sizeResult = 7.5;
     size = "2";
 } else if (id === "size4") {
@@ -30,7 +30,22 @@ console.log(namePrint);
     sizeResult = 15.5;
    size = '8';
 }
+/*  size.forEach((item= =>) {
+    if (item.checked) {
+        sizeResult = item.value;
+    }
+ });
 
+ switch (sizeResult) {
+    case '2':
+        order_size.textContent = `pizza for ${sizeResult}`;
+        break;
+ }
+ switch (sizeResult) {
+    case '4':
+        order_size.textContent = `pizza for ${sizeResult}`;
+        break;
+ } */
 
 toppingsResult = 0;
 const toppingCB = document.querySelectorAll('input[name=topping]:checked');
@@ -39,7 +54,7 @@ toppingsResult = (toppingCB.length -4) * 0.5
 };
 
 
-let toppingList = [];
+let toppingList =  [];
 for (let i = 0; i < toppingCB.length; i++) {
     toppingList.push(' ' + toppingCB[i].id);
     console.log(toppingList);
@@ -70,3 +85,5 @@ selectedDel.textContent = (`Delivery: ${deliveryPrint}`);
 form.addEventListener('input', function(event) {
     summary(event.target.id);
   });
+
+/*   form.addEventListener('input', summary); */
