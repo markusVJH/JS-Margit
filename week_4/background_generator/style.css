@@ -32,9 +32,30 @@ h1 {
   color: #224f00;
   text-align: center;
 }
+/* .colorButtons { trying to make rounded buttons
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+input[type="color"] {
+  border: 0;
+  padding: 0;
+  width: 200%;
+  height: 200%;
+  cursor: pointer;
+  transform: translate(-25%, -25%);
+} */
+
+#colorButtons {
+  border-radius: 10px;
+}
+
 input[type="color"] {
   border: none;
   box-shadow: none;
+  border-radius: 10px;
   background-color: transparent;
   width: 45%;
   height: 50px;
