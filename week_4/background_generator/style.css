@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +9,57 @@
 body {
   background-image: linear-gradient(
     to top,
-    rgb(0, 255, 60),
-    rgb(251, 251, 251)
+    /* //radiobutton value */ #224f00,
+    /* input 1 value */ #ffffff /* input 2 value */
   );
-  height: 100vw;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+form {
+  background-color: white;
+  width: 350px;
+  height: 100vh;
+  padding: 2rem;
+  border-right-style: groove;
+  border-color: #224f00;
+}
+h2 {
+  margin: 2rem 0 1rem;
+  color: #224f00;
+  text-align: center;
+}
+h1 {
+  color: #224f00;
+  text-align: center;
+}
+input[type="color"] {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  width: 45%;
+  height: 50px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  margin: 0.5rem;
+  background-color: #224f00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  color: white;
+  height: 80px;
+  width: 80px;
+}
+input[type="radio"]:checked + label {
+  background-color: #a6ff62;
+  color: rgb(0, 0, 0);
+}
+.direction_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

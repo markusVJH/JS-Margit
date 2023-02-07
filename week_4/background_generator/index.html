@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="style.css">
     <title>Background generator</title>
 </head>
@@ -11,33 +12,71 @@
   <form>
 <h1>BG generator</h1>
 <h2>Color</h2>
-<input type="color" id="color1">
-<input type="color" id="color2">
+
+<input type="color" id="color1" value="#224f00">
+<input type="color" id="color2" value="#ffffff">
 <h2>Direction</h2>
-<label for="to_bottom_right">To bottom right</label>
-<input type="radio" id="to_bottom_right" value="to bottom right" name="direction"/> <!-- value diff from id? without _ -->
-<label for="to_bottom">To bottom</label>
-<input type="radio" id="2" value="to bottom" name="direction"/> <!-- value text -->
-<label for="to_bottom_left">To bottom left</label>
-<input type="radio" id="to_bottom_left" value="to bottom left" name="direction"/>
-<label for="to_right">To right</label>
-<input type="radio" id="to_right" value="to right" name="direction"/>
-<label for="to_left">To left</label>
-<input type="radio" id="to_left" value="to left" name="direction"/>
-<label for="to_top_right">To top right</label>
-<input type="radio" id="to_top_right" value="to top right" name="direction"/>
-<label for="to_top">To top</label>
-<input type="radio" id="to_top" value="to top" name="direction"/>
-<label for="to_top_left">To top left</label>
-<input type="radio" id="to_top_left" value="to top left" name="direction"/>
+<div class="direction_grid">
+
+  <input type="radio" id="to_bottom_right" value="to bottom right" name="direction"/> 
+<label for="to_bottom_right"><span class="material-symbols-outlined">
+  south_east</span></label>
+
+
+
+  <input type="radio" id="to_bottom" value="to bottom" name="direction"/> 
+  <label for="to_bottom" ><span class="material-symbols-outlined">
+    south</span></label>
+
+
+  <input type="radio" id="to_bottom_left" value="to bottom left" name="direction"/>
+<label for="to_bottom_left"><span class="material-symbols-outlined">
+  south_west
+  </span></label>
+
+
+
+  <input type="radio" id="to_right" value="to right" name="direction"/>
+<label for="to_right"><span class="material-symbols-outlined">
+  east
+  </span></label>
+
+
+  <div></div>
+
+
+  <input type="radio" id="to_left" value="to left" name="direction"/>
+<label for="to_left"><span class="material-symbols-outlined">
+  west
+  </span></label>
+
+
+
+  <input type="radio" id="to_top_right" value="to top right" name="direction"/>
+<label for="to_top_right"><span class="material-symbols-outlined">
+  north_east
+  </span></label>
+
+  <input type="radio" id="to_top" value="to top" name="direction" checked/>
+<label for="to_top"><span class="material-symbols-outlined">
+  north
+  </span></label>
+
+
+  <input type="radio" id="to_top_left" value="to top left" name="direction"/>
+<label for="to_top_left"><span class="material-symbols-outlined">
+  north_west
+  </span></label>
+</div>
 <h2>CSS</h2>
-<p>
+<p>backgroud: <span id="css">
     background-image: linear-gradient(
     to top,
     rgb(0, 255, 60), 
     rgb(251, 251, 251) 
   );
-</p>
+</span></p>
+<script src="main.js"></script>
   </form>
 </body>
 </html>
