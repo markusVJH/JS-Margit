@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*  overscroll-behavior: none; to remove overscroll */
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Verdana, sans-serif;
+  color: white;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+header,
+section,
+footer {
+  padding: 1rem;
+}
+nav ul li {
+  display: inline-block;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer {
+  background: linear-gradient(to left, #faff69, #000000);
+}
+
+section {
+  min-height: 75vh;
+  scroll-margin-top: 5rem; /* header doesn't block the titles! */
+}
+section:first-child,
+header {
+  background: linear-gradient(to left, #000000, #57aeff);
+}
+.bg {
+  background: white;
+  color: #333;
+  padding: 0.5rem;
+}
+.bg h1 {
+  font-size: 1rem;
+}
+.mobileButton {
+  display: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: white;
+}
+section:nth-child(2) {
+  background: linear-gradient(to right, #000000, #9cf7cc);
+}
+section:nth-child(3) {
+  background: linear-gradient(to left, #000000, #ff5757);
+}
+/* section:nth-child(4) {
+  height: 50vh;
+  width: 50vw;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  top: 20px;
+  left: 20px;
+  border-radius: 10px;
+} */
+.btn {
+  border: none;
+  border-radius: 20px;
+  box-shadow: none;
+  padding: 0.5rem 1.5rem;
+  background-color: beige;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+#topButton {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+/* overlay modal */
+.overlay {
+  background-color: #33333399;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.overlay.visible {
+  display: flex;
+}
+
+.modal {
+  background-color: white;
+  color: #333;
+  height: 50vh;
+  width: 75vw;
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+}
+.modal button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* mobile settings */
+
+@media (max-width: 1000px) {
+  nav ul {
+    display: none;
+  }
+  .mobileButton {
+    display: block;
+    color: rgb(123, 123, 123);
+  }
+  ul.responsive {
+    display: block;
+    background-color: white;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 5rem;
+    width: 100%;
+  }
+  ul.responsive li {
+    display: block;
+    margin: 1rem;
+  }
+}
