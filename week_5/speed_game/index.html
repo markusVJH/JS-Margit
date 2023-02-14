@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <title>Speed game</title>
 </head>
+
 <body>
     <form>
         <h1>SPEED GAME</h1>
-        <p>Total score:</p>
+        <p>Score:<span id="scoreDisplay"></span></p>
         <section id="circles">
-            <button class="circle">1</button>
-            <button class="circle">2</button>
-            <button class="circle">3</button>
-            <button class="circle">4</button>
+            <button class="circle" id="circle1">1</button>
+            <button class="circle" id="circle2">2</button>
+            <button class="circle" id="circle3">3</button>
+            <button class="circle" id="circle4">4</button>
+
         </section>
         <div id="gameButtons">
-         <button class="btn primary" id="startButton">Start Game</button>
-         <button class="btn primary" id="endButton">End Game</button>
+            <button class="btn primary" id="startButton">Start Game</button>
+            <button class="btn primary" id="endButton">End Game</button>
+        </div>
+        <div class="modal">
+            <p>Your score is: <span id="scoreDisplay">0</span></p>
         </div>
     </form>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
