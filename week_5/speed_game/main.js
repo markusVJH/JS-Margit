@@ -1,39 +1,40 @@
-const startButton = document.querySelector('#startButton');
-const circleButtons = document.querySelectorAll('.circle');
+const startButton = document.querySelector('#startButton')
+const circleButtons = document.querySelectorAll('.circle')
 
-const scoreDisplay = document.querySelector('#scoreDisplay');
-let scoreCount = 0;
+const scoreDisplay = document.querySelector('#scoreDisplay')
+let scoreCount = 0
 const startGame = () => {
-
-    /*    console.log('Button is clicked');
-       event.preventDefault(); */
-
-    /*    const id = event.target.id;
-       if (id === 'circle1') {
-           console.log('Button 1 was clicked')
-       } else if (id === 'circle2') {
-           console.log('Button 2 was clicked')
-       } else if (id === 'circle3') {
-           console.log('Button 3 was clicked')
-       } else if (id === 'circle4') {
-           console.log('Button 4 was clicked')
-       }
-       event.preventDefault() */
-    const id = event.target.id;
-    console.log(`${id} was clicked`);
-    event.preventDefault();
-    if (id !== startButton) {
-        scoreCount += 1;
-        console.log(scoreCount);
-        scoreDisplay.textContent = scoreCount;
-    }
+  console.log('Start button is clicked')
+  event.preventDefault()
 }
 
+const circleClick = () => {
+  const id = event.target.id
+  console.log(`${id} was clicked`)
+  event.preventDefault()
 
+  scoreCount += 1
+  console.log(scoreCount)
+  scoreDisplay.textContent = scoreCount
+}
 
+let previousRandomNumber = 0
 
+const randomCircle = () => {
+  console.log('Start button is clicked')
+  event.preventDefault()
+  for (let i = 0; i < 5; i++) {
+    let highlight = Math.floor(Math.random() * 4) + 1
+    console.log(highlight)
+  }
+}
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', randomCircle)
 for (const circleButton of circleButtons) {
-    circleButton.addEventListener('click', startGame);
+  circleButton.addEventListener('click', circleClick)
 }
+
+/* circles.forEach((circle, i) => { teachers way to find out which circle was clicked
+    circle.addEventListener('click', () =>
+    clickCircle(i));
+}); */
