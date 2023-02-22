@@ -2,7 +2,8 @@ const startButton = document.querySelector('#startButton')
 const circleButtons = document.querySelectorAll('.circle')
 const scoreDisplay = document.querySelector('#scoreDisplay')
 let scoreCount = 0
-let randomNumber = 0
+let active;
+let number
 
 const clickCircle = (i) => {
   console.log('circle index:', i)
@@ -12,19 +13,21 @@ const clickCircle = (i) => {
   scoreDisplay.textContent = scoreCount
   event.preventDefault()
 }
-/* function getRandomNumber() {
-  randomNumber = Math.floor(Math.random() * 4) + 1;
-} */
+const randomNumber = () => {
+  number = Math.floor(Math.random() * circleButtons.length)
+}
 const startGame = () => {
   console.log('Start button is clicked')
   event.preventDefault()
-  randomNumber = Math.floor(Math.random() * 4) + 1
-  console.log(randomNumber)
+  randomNumber()
+  console.log(number)
+  const activeCircle = circleButtons[number]
+  activeCircle.classList.add('bg')
 }
 
 startButton.addEventListener('click', startGame)
 
-circleButtons.forEach((circle, i) => { /* teachers way to find out which circle was clicked */
+circleButtons.forEach((circle, i) => {
   circle.addEventListener('click', () =>
     clickCircle(i))
 })

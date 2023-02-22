@@ -6,7 +6,7 @@
 
 body {
   background: linear-gradient(to top, #ffffff, #a0f2ff);
-  font-family: 'Nova Mono', monospace;
+  font-family: "Nova Mono", monospace;
   height: 100vh;
 }
 form {
@@ -32,7 +32,7 @@ h1 {
   display: flex;
   height: 20vh;
   width: 20vh;
-  background: linear-gradient(to top, #b0faff, #ffffff);
+  background-color: #b0faff;
   padding: 2rem;
   border: none;
   border-color: #ffffff;
@@ -43,6 +43,9 @@ h1 {
   margin-left: 1rem;
   margin-right: 1rem;
   /* text-align: center; */
+}
+.circle.bg {
+  background-color: green;
 }
 .btn {
   padding: 0.5rem;
