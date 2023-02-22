@@ -1,46 +1,54 @@
 const startButton = document.querySelector('#startButton')
 const circleButtons = document.querySelectorAll('.circle')
 const scoreDisplay = document.querySelector('#scoreDisplay')
+const finalScore = document.querySelector('#finalScore')
 let scoreCount = 0
 let activeCircle
 let number
 let pace = 1000
 
-
-const clickCircle = (i) => {
-  console.log('circle index:', i)
-
-  scoreCount += 1
-  console.log(scoreCount)
-  scoreDisplay.textContent = scoreCount
-  event.preventDefault()
-}
 let previousNumber
 const randomNumber = () => {
   while (number === previousNumber) {
     number = Math.floor(Math.random() * circleButtons.length)
   }
   previousNumber = number
-  pace = pace - 50
+  pace = pace - 30
 }
-
+let previousCircle = null
 
 const startGame = (event) => {
-  
   /* console.log('Start button is clicked') */
   event.preventDefault()
   randomNumber()
   console.log(number)
-  activeCircle = circleButtons[number]
-  activeCircle.classList.add('bg')
-  /* if (activeCircle !== null) {
-    activeCircle.classList.remove('active')
-  } */
+  const newCircle = circleButtons[number]
+  if (previousCircle !== null) {
+    previousCircle.classList.remove('bg')
+  }
+  newCircle.classList.add('bg')
+  previousCircle = newCircle
   setTimeout(() => {
     startGame(event)
   }, pace)
 }
-
+const clickCircle = (i) => {
+  console.log('circle index:', i)
+  if (i === number) {
+    scoreCount += 1
+    console.log(scoreCount)
+    scoreDisplay.textContent = scoreCount
+    event.preventDefault()
+  } else {
+    endGame()
+  }
+}
+const endGame = () => {
+  event.preventDefault()
+  const modal = document.querySelector('.modal')
+  modal.style.display = 'block'
+  finalScore.textContent = scoreCount
+}
 /* startButton.addEventListener('click', startGame) */
 startButton.addEventListener('click', (event) => {
   startGame(event);
