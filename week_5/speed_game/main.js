@@ -17,7 +17,7 @@ const randomNumber = () => {
 }
 let previousCircle = null
 
-const startGame = (event) => {
+let startGame = (event) => {
   /* console.log('Start button is clicked') */
   event.preventDefault()
   randomNumber()
@@ -44,6 +44,7 @@ const clickCircle = (i) => {
   }
 }
 const endGame = () => {
+  startGame = false
   event.preventDefault()
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'

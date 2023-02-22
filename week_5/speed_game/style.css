@@ -49,7 +49,7 @@ h1 {
 }
 .btn {
   padding: 0.5rem;
-  background: linear-gradient(to top, #ffffff, #b0faff);
+  background-color: #b0faff;
   color: #000000;
   border-radius: 20px;
   border-style: hidden;
@@ -58,6 +58,7 @@ h1 {
   font-size: inherit;
   box-shadow: none;
 }
+
 .modal {
   display: none;
   background-color: white;
@@ -71,4 +72,18 @@ h1 {
   position: absolute;
   top: 100px;
   justify-content: center;
+}
+.btn.close {
+  padding: 0.5rem;
+  background-color: rgb(255, 0, 0);
+  color: #ffffff;
+  border-radius: 20px;
+  border-style: hidden;
+  font-family: inherit;
+  width: 2rem;
+  font-size: inherit;
+  box-shadow: none;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
 }
