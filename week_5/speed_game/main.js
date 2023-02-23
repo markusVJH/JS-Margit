@@ -67,7 +67,7 @@ const endGame = () => {
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
   if (scoreCount < 5) {
-    message.textContent = 'you suck xd'
+    message.textContent = 'YOU SUCK XD'
   } else if (scoreCount < 10) {
     message.textContent = 'you almost not suck xd'
   } else {
@@ -78,7 +78,9 @@ const endGame = () => {
 startButton.addEventListener('click', (event) => {
   startGame(event)
 })
-
+endButton.addEventListener('click', (event) => {
+  endGame(event)
+})
 circleButtons.forEach((circle, i) => {
   circle.addEventListener('click', () =>
     clickCircle(i))
