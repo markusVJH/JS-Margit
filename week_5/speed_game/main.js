@@ -4,6 +4,7 @@ const circleButtons = document.querySelectorAll('.circle')
 const scoreDisplay = document.querySelector('#scoreDisplay')
 const finalScore = document.querySelector('#finalScore')
 const overlay = document.querySelector('.overlay')
+const message = document.querySelector('#message')
 let scoreCount = 0
 let activeCircle
 let number
@@ -49,6 +50,8 @@ const clickCircle = (i) => {
     scoreDisplay.textContent = scoreCount
     circleClicked = true
     event.preventDefault()
+  } else if (i === number && circleClicked === true) {
+    event.preventDefault()
   } else {
     endGame()
   }
@@ -60,6 +63,13 @@ const endGame = () => {
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
+  if (scoreCount < 5) {
+    message.textContent = 'you suck xd'
+  } else if (scoreCount < 10) {
+    message.textContent = 'you almost not suck xd'
+  } else {
+    message.textContent = 'you not suck xd'
+  }
 }
 /* startButton.addEventListener('click', startGame) */
 startButton.addEventListener('click', (event) => {
