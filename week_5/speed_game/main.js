@@ -6,10 +6,11 @@ const finalScore = document.querySelector('#finalScore')
 const overlay = document.querySelector('.overlay')
 const message = document.querySelector('#message')
 let scoreCount = 0
-let activeCircle
 let number
 let pace = 1000
-circleButtons.disabled = true
+circleButtons.forEach(button => {
+  button.disabled = true
+})
 
 let previousNumber
 const randomNumber = () => {
@@ -23,7 +24,9 @@ const randomNumber = () => {
 let previousCircle = null
 
 let startGame = (event) => {
-  circleButtons.disabled = false
+  circleButtons.forEach(button => {
+    button.disabled = false
+  })
   /* console.log('Start button is clicked') */
   event.preventDefault()
   startButton.classList.add('hide')
@@ -59,7 +62,7 @@ const clickCircle = (i) => {
 const endGame = () => {
   startGame = false
   event.preventDefault()
-  overlay.classList.toggle('visible');
+  overlay.classList.toggle('visible')
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
@@ -81,11 +84,9 @@ circleButtons.forEach((circle, i) => {
     clickCircle(i))
 })
 
-
 /* for (const circleButton of circleButtons) {
   circleButton.addEventListener('click', circleClick)
 } */
-
 
 /* notes functions
 
@@ -103,13 +104,10 @@ startGame
 pickNew to get new highlights (inside of startGame) takes number from random. while (loop) its the same number, look new number
 starts startgame all over again
 
-
 endGame
 
 clickCricle
 
-
 enableCircles small function. switch circle on off. Everything could be in startGame
 
 resetGame (close button for modal) */
-
