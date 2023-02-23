@@ -68,8 +68,8 @@ const clickCircle = (i) => {
 }
 
 const endGame = (event) => {
-  startGame = false
   event.preventDefault()
+  startGame = false
   overlay.classList.toggle('visible')
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
