@@ -1,11 +1,14 @@
 const startButton = document.querySelector('#startButton')
+const endButton = document.querySelector('#endButton')
 const circleButtons = document.querySelectorAll('.circle')
 const scoreDisplay = document.querySelector('#scoreDisplay')
 const finalScore = document.querySelector('#finalScore')
+const overlay = document.querySelector('.overlay')
 let scoreCount = 0
 let activeCircle
 let number
 let pace = 1000
+circleButtons.disabled = true
 
 let previousNumber
 const randomNumber = () => {
@@ -14,12 +17,16 @@ const randomNumber = () => {
   }
   previousNumber = number
   pace = pace - 30
+  circleClicked = false
 }
 let previousCircle = null
 
 let startGame = (event) => {
+  circleButtons.disabled = false
   /* console.log('Start button is clicked') */
   event.preventDefault()
+  startButton.classList.add('hide')
+  endButton.classList.add('end')
   randomNumber()
   console.log(number)
   const newCircle = circleButtons[number]
@@ -32,12 +39,15 @@ let startGame = (event) => {
     startGame(event)
   }, pace)
 }
+
+let circleClicked = false
 const clickCircle = (i) => {
   console.log('circle index:', i)
-  if (i === number) {
+  if (i === number && circleClicked === false) {
     scoreCount += 1
     console.log(scoreCount)
     scoreDisplay.textContent = scoreCount
+    circleClicked = true
     event.preventDefault()
   } else {
     endGame()
@@ -46,14 +56,15 @@ const clickCircle = (i) => {
 const endGame = () => {
   startGame = false
   event.preventDefault()
+  overlay.classList.toggle('visible');
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
 }
 /* startButton.addEventListener('click', startGame) */
 startButton.addEventListener('click', (event) => {
-  startGame(event);
-});
+  startGame(event)
+})
 
 circleButtons.forEach((circle, i) => {
   circle.addEventListener('click', () =>

@@ -17,19 +17,23 @@
     <h1>SPEED GAME!</h1>
     <p>Score:<span id="scoreDisplay"></span></p>
     <section id="circles">
-      <button class="circle" id="circle1"><p>1</p></button> 
-      <button class="circle" id="circle2"><p>2</p></button> 
-      <button class="circle" id="circle3"><p>3</p></button> 
-      <button class="circle" id="circle4"><p>4</p></button> 
+      <button class="circle" id="circle1"></button> 
+      <button class="circle" id="circle2"></button> 
+      <button class="circle" id="circle3"></button> 
+      <button class="circle" id="circle4"></button> 
       
     </section>
     <div id="gameButtons">
-      <button class="btn primary" id="startButton">Start Game</button>
-      <button class="btn primary" id="endButton">End Game</button>
+      <button class="btn" id="startButton">Start Game</button>
+      <button class="btn" id="endButton">End Game</button>
     </div>
+    <div class="overlay">
     <div class="modal">
       <p>Your score was: <span id="finalScore"></span></p>
-      <button class= "btn close" id="close">X</button>
+      <div id="close">
+      <button class= "btn close" id="close">Play again</button>
+      </div>
+    </div>
     </div>
   </form>
   <script src="main.js"></script>
