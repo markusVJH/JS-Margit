@@ -8,18 +8,24 @@ const message = document.querySelector('#message')
 let scoreCount = 0
 let number
 let pace = 1000
+let rounds = 0
 circleButtons.forEach(button => {
   button.disabled = true
 })
 
 let previousNumber
-const randomNumber = () => {
+const randomNumber = (event) => {
   while (number === previousNumber) {
     number = Math.floor(Math.random() * circleButtons.length)
   }
   previousNumber = number
   pace = pace - 30
   circleClicked = false
+  rounds++
+  console.log(`rounds: ${rounds}`)
+  if (rounds === 3) {
+    endGame(event)
+  }
 }
 let previousCircle = null
 
@@ -31,7 +37,7 @@ let startGame = (event) => {
   event.preventDefault()
   startButton.classList.add('hide')
   endButton.classList.add('end')
-  randomNumber()
+  randomNumber(event)
   console.log(number)
   const newCircle = circleButtons[number]
   if (previousCircle !== null) {
@@ -52,14 +58,16 @@ const clickCircle = (i) => {
     console.log(scoreCount)
     scoreDisplay.textContent = scoreCount
     circleClicked = true
+    rounds = 0
     event.preventDefault()
   } else if (i === number && circleClicked === true) {
     event.preventDefault()
   } else {
-    endGame()
+    endGame(event)
   }
 }
-const endGame = () => {
+
+const endGame = (event) => {
   startGame = false
   event.preventDefault()
   overlay.classList.toggle('visible')

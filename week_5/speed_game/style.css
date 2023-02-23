@@ -113,4 +113,5 @@ h1 {
 }
 .btn.end {
   display: block;
+  background-color: rgb(255, 146, 146);
 }
