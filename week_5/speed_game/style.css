@@ -115,3 +115,35 @@ h1 {
   display: block;
   background-color: rgb(255, 146, 146);
 }
+@media (max-width: 576px) {
+  #circles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .circle {
+    height: 110px;
+    width: 110px;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+@media (max-height: 450px) {
+  h1,
+  p,
+  #gameButtons,
+  #circles {
+    padding: 0.8rem;
+  }
+  .circle {
+    height: 110px;
+    width: 110px;
+  }
+  h1 {
+    padding-top: 0rem;
+    margin-top: 0rem;
+  }
+}

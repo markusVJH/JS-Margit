@@ -13,6 +13,7 @@ circleButtons.forEach(button => {
   button.disabled = true
 })
 const clickSound = new Audio('sound.mp3')
+const clownSound = new Audio('clown.mp3')
 
 let previousNumber
 const randomNumber = (event) => {
@@ -77,6 +78,7 @@ const endGame = (event) => {
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
   if (scoreCount < 5) {
+    clownSound.play()
     message.textContent = 'YOU SUCK XD'
   } else if (scoreCount < 10) {
     message.textContent = 'you almost not suck xd'
