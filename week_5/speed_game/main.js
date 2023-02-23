@@ -12,6 +12,7 @@ let rounds = 0
 circleButtons.forEach(button => {
   button.disabled = true
 })
+const clickSound = new Audio('sound.mp3')
 
 let previousNumber
 const randomNumber = (event) => {
@@ -59,6 +60,7 @@ const clickCircle = (i) => {
     scoreDisplay.textContent = scoreCount
     circleClicked = true
     rounds = 0
+    clickSound.play()
     event.preventDefault()
   } else if (i === number && circleClicked === true) {
     event.preventDefault()
