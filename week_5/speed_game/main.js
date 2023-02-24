@@ -12,8 +12,9 @@ let rounds = 0
 circleButtons.forEach(button => {
   button.disabled = true
 })
-const clickSound = new Audio('arrow.mp3')
+const clickSound = new Audio('whoosh4.mp3')
 const clownSound = new Audio('clown.mp3')
+const endSound = new Audio('end.mp3')
 
 let previousNumber
 const randomNumber = (event) => {
@@ -56,12 +57,15 @@ let circleClicked = false
 const clickCircle = (i) => {
   console.log('circle index:', i)
   if (i === number && circleClicked === false) {
-    scoreCount += 10
+    scoreCount += 30
     console.log(scoreCount)
     scoreDisplay.textContent = ` ${scoreCount}km/h`
     circleClicked = true
     rounds = 0
+    const volumePercent = Math.min(100, scoreCount / 2)
+    const volume = volumePercent / 100
     clickSound.currentTime = 0
+    clickSound.volume = volume
     clickSound.play()
     event.preventDefault()
   } else if (i === number && circleClicked === true) {
@@ -77,14 +81,26 @@ const endGame = (event) => {
   overlay.classList.toggle('visible')
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
-  finalScore.textContent = scoreCount
-  if (scoreCount < 50) {
-    clownSound.play()
-    message.textContent = 'YOU SUCK XD'
-  } else if (scoreCount < 100) {
-    message.textContent = 'you almost not suck xd'
+  if (scoreCount === 0) {
+    finalScore.textContent = 'LOL'
   } else {
-    message.textContent = 'you not suck xd'
+    finalScore.textContent = `Your speed was ${scoreCount}km/h before crashing`
+  }
+  if (scoreCount === 0) {
+    clownSound.play()
+    message.textContent = 'You crashed on the first one \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21'
+  } else if (scoreCount < 150) {
+    clownSound.play()
+    message.textContent = 'YOU SUCK xdd A novice should hanlde at least 150km/h'
+  } else if (scoreCount < 300) {
+    endSound.play()
+    message.textContent = 'Not bad! With practice you can reach 300km/h'
+  } else if (scoreCount < 500) {
+    endSound.play()
+    message.textContent = 'Very good! Elite pilots can reach 500km/h, can you?'
+  } else {
+    endSound.play()
+    message.textContent = 'Over 500km/h! Elite level piloting skills!'
   }
 }
 /* startButton.addEventListener('click', startGame) */
