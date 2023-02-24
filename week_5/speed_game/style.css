@@ -5,9 +5,12 @@
 }
 
 body {
-  background: linear-gradient(to top, #ffffff, #a0f2ff);
+  background: rgb(83, 83, 83) url(darkspace.avif) no-repeat fixed center
+    center/cover;
+  /*  background: rgb(9, 75, 0) center/cover; */
   font-family: "Nova Mono", monospace;
   height: 100vh;
+  color: white;
 }
 form {
   display: flex;
@@ -24,6 +27,7 @@ p,
 
 h1 {
   font-size: 3rem;
+  color: white;
 }
 #circles {
   display: flex;
@@ -33,7 +37,8 @@ h1 {
   display: flex;
   height: 20vh;
   width: 20vh;
-  background-color: #b0faff;
+  background: rgba(83, 83, 83, 0) url(asteroid.png) no-repeat center
+    center/cover;
   padding: 2rem;
   border: none;
   border-color: #ffffff;
@@ -46,18 +51,20 @@ h1 {
   /* text-align: center; */
 }
 .circle.bg {
-  background-color: green;
+  background: rgba(0, 128, 0, 0);
+  border: solid;
+  border-color: white;
 }
 .btn {
   padding: 0.5rem;
-  background-color: #b0faff;
-  color: #000000;
+  background-color: #2f4344;
   border-radius: 100%;
   border-style: hidden;
   font-family: inherit;
   width: 10rem;
   font-size: inherit;
   box-shadow: none;
+  color: white;
 }
 .overlay {
   background-color: #00000080;
@@ -75,8 +82,8 @@ h1 {
 }
 .modal {
   display: none;
-  background-color: rgba(255, 255, 255, 0.912);
-  color: #000000;
+  background-color: rgba(0, 0, 0, 0.775);
+  color: #ffffff;
   font-family: inherit;
   height: 50vh;
   width: 50vw;
@@ -130,6 +137,10 @@ h1 {
   h1 {
     text-align: center;
   }
+  .modal {
+    height: 50%;
+    width: 90%;
+  }
 }
 @media (max-height: 450px) {
   h1,
@@ -145,5 +156,10 @@ h1 {
   h1 {
     padding-top: 0rem;
     margin-top: 0rem;
+  }
+  .modal {
+    height: 90%;
+    width: 90%;
+    top: 10px;
   }
 }

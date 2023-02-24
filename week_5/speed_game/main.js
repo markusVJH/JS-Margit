@@ -12,7 +12,7 @@ let rounds = 0
 circleButtons.forEach(button => {
   button.disabled = true
 })
-const clickSound = new Audio('sound.mp3')
+const clickSound = new Audio('arrow.mp3')
 const clownSound = new Audio('clown.mp3')
 
 let previousNumber
@@ -56,11 +56,12 @@ let circleClicked = false
 const clickCircle = (i) => {
   console.log('circle index:', i)
   if (i === number && circleClicked === false) {
-    scoreCount += 1
+    scoreCount += 10
     console.log(scoreCount)
-    scoreDisplay.textContent = scoreCount
+    scoreDisplay.textContent = ` ${scoreCount}km/h`
     circleClicked = true
     rounds = 0
+    clickSound.currentTime = 0
     clickSound.play()
     event.preventDefault()
   } else if (i === number && circleClicked === true) {
@@ -77,10 +78,10 @@ const endGame = (event) => {
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
   finalScore.textContent = scoreCount
-  if (scoreCount < 5) {
+  if (scoreCount < 50) {
     clownSound.play()
     message.textContent = 'YOU SUCK XD'
-  } else if (scoreCount < 10) {
+  } else if (scoreCount < 100) {
     message.textContent = 'you almost not suck xd'
   } else {
     message.textContent = 'you not suck xd'
