@@ -15,6 +15,7 @@ circleButtons.forEach(button => {
 const clickSound = new Audio('whoosh4.mp3')
 const clownSound = new Audio('clown.mp3')
 const endSound = new Audio('end.mp3')
+const accelSound = new Audio('accel.mp3')
 
 let previousNumber
 const randomNumber = (event) => {
@@ -36,6 +37,7 @@ let startGame = (event) => {
   circleButtons.forEach(button => {
     button.disabled = false
   })
+  accelSound.play()
   /* console.log('Start button is clicked') */
   event.preventDefault()
   startButton.classList.add('hide')
@@ -78,6 +80,7 @@ const clickCircle = (i) => {
 const endGame = (event) => {
   event.preventDefault()
   startGame = false
+  accelSound.pause()
   overlay.classList.toggle('visible')
   const modal = document.querySelector('.modal')
   modal.style.display = 'block'
