@@ -18,9 +18,7 @@ const endSound = new Audio('end.mp3')
 const accelSound = new Audio('accel.mp3')
 const musicSound = new Audio('music.mp3') //  https://www.youtube.com/watch?v=2f81W4_bdeI&ab_channel=TheSci-FiSoundsProject-Topic
 musicSound.volume = 0.1
-window.addEventListener('load', () => {
-  musicSound.play()
-})
+musicSound.play()
 
 let previousNumber
 const randomNumber = (event) => {
@@ -124,31 +122,3 @@ circleButtons.forEach((circle, i) => {
   circle.addEventListener('click', () =>
     clickCircle(i))
 })
-
-/* for (const circleButton of circleButtons) {
-  circleButton.addEventListener('click', circleClick)
-} */
-
-/* notes functions
-
-global vars
-
-score
-active currently active number
-timer settimeout. global because two use it. Start puts it on. end puts it off.
-pace = 1000. everytime new number pace -10. Pace is optional
-rounds how many times you miss
-
-separate function for randomnumbers copypaste w3schools random numbers (0,4)
-
-startGame
-pickNew to get new highlights (inside of startGame) takes number from random. while (loop) its the same number, look new number
-starts startgame all over again
-
-endGame
-
-clickCricle
-
-enableCircles small function. switch circle on off. Everything could be in startGame
-
-resetGame (close button for modal) */
