@@ -24,6 +24,11 @@ body::before {
   background-color: rgba(0, 0, 0, 0.743);
   z-index: -1;
 }
+#muteButton {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+}
 form {
   display: flex;
   flex-direction: column;
