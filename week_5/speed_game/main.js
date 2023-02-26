@@ -16,6 +16,11 @@ const clickSound = new Audio('whoosh4.mp3')
 const clownSound = new Audio('clown.mp3')
 const endSound = new Audio('end.mp3')
 const accelSound = new Audio('accel.mp3')
+const musicSound = new Audio('music.mp3') //  https://www.youtube.com/watch?v=2f81W4_bdeI&ab_channel=TheSci-FiSoundsProject-Topic
+musicSound.volume = 0.1
+window.addEventListener('load', () => {
+  musicSound.play()
+})
 
 let previousNumber
 const randomNumber = (event) => {
@@ -37,6 +42,7 @@ let startGame = (event) => {
   circleButtons.forEach(button => {
     button.disabled = false
   })
+  musicSound.volume = 0.05
   accelSound.play()
   /* console.log('Start button is clicked') */
   event.preventDefault()
@@ -78,6 +84,7 @@ const clickCircle = (i) => {
 }
 
 const endGame = (event) => {
+  musicSound.volume = 0
   event.preventDefault()
   startGame = false
   accelSound.pause()
@@ -93,7 +100,7 @@ const endGame = (event) => {
     clownSound.play()
     message.textContent = 'You crashed on the first one \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21 \uD83E\uDD21'
   } else if (scoreCount < 150) {
-    clownSound.play()
+    endSound.play()
     message.textContent = 'YOU SUCK xdd A novice should hanlde at least 150km/h'
   } else if (scoreCount < 300) {
     endSound.play()
