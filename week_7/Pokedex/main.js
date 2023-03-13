@@ -103,6 +103,10 @@ gen9.addEventListener('click', function() {
 
 
 //searchpokemon
+let searchValue = ''
+const pokemonData = [];
+let filterList;
+
 const searchPokemon = (e) => {
   searchValue = e.target.value;
   filterList =
