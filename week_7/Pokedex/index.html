@@ -11,40 +11,41 @@
   <main>
   <h1>Pokedex</h1>
   <div id="gens">
-  <button id="gen1">Generation 1</button>
-  <button id="gen2">Generation 2</button>
-  <button id="gen3">Generation 3</button>
-  <button id="gen4">Generation 4</button>
-  <button id="gen5">Generation 5</button>
-  <button id="gen6">Generation 6</button>
-  <button id="gen7">Generation 7</button>
-  <button id="gen8">Generation 8</button>
-  <button id="gen9">Generation 9</button>
+  <button class="gen_button" data-gen-id="1">Generation 1</button>
+  <button class="gen_button" data-gen-id="2">Generation 2</button>
+  <button class="gen_button" data-gen-id="3">Generation 3</button>
+  <button class="gen_button" data-gen-id="4">Generation 4</button>
+  <button class="gen_button" data-gen-id="5">Generation 5</button>
+  <button class="gen_button" data-gen-id="6">Generation 6</button>
+  <button class="gen_button" data-gen-id="7">Generation 7</button>
+  <button class="gen_button" data-gen-id="8">Generation 8</button>
+  <button class="gen_button" data-gen-id="9">Generation 9</button>
+  
   </div>
   <h2 id="introTitle">Select which generation of Pokémon you want to see!</h2>
   <h2 id="genTitle"></h2>
   <input type="text" id="search" placeholder="Search for pokemons">
   <div class="dropdown">
-    <button class="dropbtn">Filter by type</button>
+    <button id="dropdownBtn" class="dropbtn">Filter by type</button>
     <div class="dropdown-content">
-      <a href="#">Normal</a>
-      <a href="#">Fire</a>
-      <a href="#">Water</a>
-      <a href="#">Grass</a>
-      <a href="#">Electric</a>
-      <a href="#">Ice</a>
-      <a href="#">Fighting</a>
-      <a href="#">Poison</a>
-      <a href="#">Ground</a>
-      <a href="#">Flying</a>
-      <a href="#">Psychic</a>
-      <a href="#">Bug</a>
-      <a href="#">Rock</a>
-      <a href="#">Ghost</a>
-      <a href="#">Dark</a>
-      <a href="#">Dragon</a>
-      <a href="#">Steel</a>
-      <a href="#">Fairy</a>
+      <a href="#" data-type="normal">Normal</a>
+      <a href="#" data-type="fire">Fire</a>
+      <a href="#" data-type="water">Water</a>
+      <a href="#" data-type="grass">Grass</a>
+      <a href="#" data-type="electric">Electric</a>
+      <a href="#" data-type="ice">Ice</a>
+      <a href="#" data-type="fighting">Fighting</a>
+      <a href="#" data-type="poison">Poison</a>
+      <a href="#" data-type="ground">Ground</a>
+      <a href="#" data-type="flying">Flying</a>
+      <a href="#" data-type="psychic">Psychic</a>
+      <a href="#" data-type="bug">Bug</a>
+      <a href="#" data-type="rock">Rock</a>
+      <a href="#" data-type="ghost">Ghost</a>
+      <a href="#" data-type="dark">Dark</a>
+      <a href="#" data-type="dragon">Dragon</a>
+      <a href="#" data-type="steel">Steel</a>
+      <a href="#" data-type="fairy">Fairy</a>
     </div>
   </div>
   <section id="pokeCards">
@@ -53,3 +54,13 @@
   <script src="main.js"></script>
 </body>
 </html>
+<!-- 
+          Promise.all(fetches).then(res => { dataList(res);console.log(res);})
+        })
+  
+  const dataList = (data) => {
+    {
+      document.querySelector('#pokeCards').innerHTML = data.map((item, i) => `<div class="pokeCard"><div class="pokeInfo">#${item.id} ${item.name}<div class="pokeType">${item.types.map(t => `<img id="type" src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${t.type.name}.svg" alt="${t.type.name}"/>`).join('')}</div></div><img src="${item.sprites.front_default}"/></div>`).join('');
+    };
+  }
+} -->

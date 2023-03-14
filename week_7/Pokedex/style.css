@@ -119,7 +119,7 @@ img {
 }
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: none;
   margin-top: 2rem;
 }
 .dropdown-content {
